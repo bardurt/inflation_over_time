@@ -3,7 +3,7 @@ inflationMonthlySum <- function(overTime, startYear, endYear){
   THRESHOLD = 0.1
   TARGET_END = TARGET + THRESHOLD
   COLUMN_NAME = "PCEPILFE_PC1"
-  table <- read.table("C:\\Users\\barth\\Desktop\\coding\\r\\us_inflation\\PCEPILFE.csv", header = TRUE, sep = ",")
+  table <- read.table("PCEPILFE.csv", header = TRUE, sep = ",")
   
   table <- table[seq(dim(table)[1],1),]
 
