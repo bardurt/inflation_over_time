@@ -1,4 +1,4 @@
-inflationMonthlySum <- function(overTime, startYear, endYear){
+inflation <- function(overTime, startYear, endYear){
   TARGET = 2
   THRESHOLD = 0.1
   TARGET_END = TARGET + THRESHOLD
@@ -93,4 +93,4 @@ inflationMonthlySum <- function(overTime, startYear, endYear){
 
 
 
-inflationMonthlySum(FALSE,2005, 2025)
+inflation(TRUE,2005, 2025)
