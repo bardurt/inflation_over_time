@@ -45,11 +45,11 @@ inflation <- function(overTime, startYear, endYear){
     }
   }
   
-  tableName = paste("Inflation, PCE (Ex. Food and Energy)","[",startYear, ", ", endYear-1, "]")
+  tableName = paste("Inflation, PCE (Ex. Food and Energy)","[",startYear, "; ", endYear-1, "]")
   xLabel = "Date"
   
   if(overTime){
-    tableName = paste("Inflation Over Time, PCE (Ex. Food and Energy)","[",startYear, ", ", endYear-1, "]", "\n","Between: ", TARGET, " and ", TARGET_END, " %")   
+    tableName = paste("Inflation Over Time, PCE (Ex. Food and Energy)","[",startYear, "; ", endYear-1, "]", "\n","Between: ", TARGET, " and ", TARGET_END, " %")   
     xLabel = "Months back"
   } else {
     print(xAxis[1])
@@ -81,6 +81,7 @@ inflation <- function(overTime, startYear, endYear){
          col = "blue",
          lty = "dashed",
          lwd = 1)
+  
   if(overTime){
     abline(h = TARGET_END,
          col = "blue",
@@ -92,5 +93,4 @@ inflation <- function(overTime, startYear, endYear){
 }
 
 
-
-inflation(TRUE,2005, 2025)
+inflation(FALSE,2005, 2025)
