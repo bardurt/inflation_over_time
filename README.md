@@ -16,7 +16,7 @@ not tying ourselves to a particular mathematical formula that defines the averag
 our approach could be viewed as a flexible form of average inflation targeting."[Jerome Powell, August 27, 2020](https://www.federalreserve.gov/newsevents/speech/files/powell20200827a.pdf)
 
 
-Therefore, on can assume, sice the Federal Reserver has no formula, that the FOMC will look back at some time frame, 24 months ex, and get the average inflation for look back time period. This script intends to do just that, do a look back for several months, (1, 2, 10, 24) and get the average inflation for the look back period.
+One can therefore assume that, since the Federal Reserve lacks a specific formula, the FOMC might review a past time frame, such as 24 months, to calculate the average inflation for that period. This script aims to replicate that approach by performing a look-back over various time frames (e.g., 1, 2, 10, or 24 months) and determining the average inflation for each
 
 ### How to use the script
 The script contains a fuction
