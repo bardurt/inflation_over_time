@@ -8,7 +8,7 @@ def inflation(overTime, startYear, endYear):
     COLUMN_NAME = "PCEPILFE_PC1"
     
     # Read CSV file and reverse the table
-    table = pd.read_csv("assets/PCEPILFE.csv")
+    table = pd.read_csv("PCEPILFE.csv")
     table = table[::-1]
     
     # Filter the table based on year range
