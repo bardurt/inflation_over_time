@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 
 def inflation(overTime, startYear, endYear):
     TARGET = 2
@@ -62,5 +63,22 @@ def inflation(overTime, startYear, endYear):
     plt.ylim(-0.5, 6)
     plt.show()
 
-
-inflation(False, 2005, 2025)
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Error: Expected 3 arguments (BOOLEAN, startYear, endYear)")
+        sys.exit(1)
+    
+    arg1 = sys.argv[1].upper()
+    if arg1 not in ["TRUE", "FALSE"]:
+        print("Error: First argument must be TRUE or FALSE")
+        sys.exit(1)
+    
+    try:
+        startYear = int(sys.argv[2])
+        endYear = int(sys.argv[3])
+    except ValueError:
+        print("Error: Second and third arguments must be numbers")
+        sys.exit(1)
+    
+    overTime = arg1 == "TRUE"
+    inflation(overTime, startYear, endYear)
