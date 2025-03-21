@@ -34,6 +34,10 @@ def inflation(overTime, startYear, endYear):
             inflationOverTime.append(rowValue)
             xAxis.append(date)
     
+    if overTime:
+        inflationOverTime.reverse()
+        xAxis.reverse()
+
     tableName = f"Inflation, PCE (Ex. Food and Energy) [{startYear}; {endYear-1}]"
     xLabel = "Date"
     
@@ -59,6 +63,8 @@ def inflation(overTime, startYear, endYear):
     plt.xlabel(xLabel)
     plt.ylabel("%")
     plt.ylim(-0.5, 6)
+    if overTime:
+        plt.gca().invert_xaxis()
     plt.show()
 
 if __name__ == "__main__":
