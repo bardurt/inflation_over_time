@@ -16,7 +16,6 @@ def inflation(overTime, startYear, endYear):
     table['Year'] = pd.to_datetime(table['DATE']).dt.year
     filtered_table = table[(table['Year'] > startYear) & (table['Year'] < endYear)]
     
-    # Initialize variables
     inflationOverTime = []
     xAxis = []
     firstIndex = filtered_table.index[0]
@@ -42,7 +41,6 @@ def inflation(overTime, startYear, endYear):
         tableName = f"Inflation Over Time, PCE (Ex. Food and Energy) [{startYear}; {endYear-1}] Between: {TARGET} and {TARGET_END} %"
         xLabel = "Months back"
     
-    # Plotting
     plt.figure(figsize=(10, 6))
     
     if overTime:
