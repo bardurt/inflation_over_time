@@ -8,11 +8,9 @@ def inflation(overTime, startYear, endYear):
     TARGET_END = TARGET + THRESHOLD
     COLUMN_NAME = "PCEPILFE_PC1"
     
-    # Read CSV file and reverse the table
     table = pd.read_csv("PCEPILFE.csv")
     table = table[::-1]
     
-    # Filter the table based on year range
     table['Year'] = pd.to_datetime(table['DATE']).dt.year
     filtered_table = table[(table['Year'] > startYear) & (table['Year'] < endYear)]
     
@@ -20,12 +18,10 @@ def inflation(overTime, startYear, endYear):
     xAxis = []
     firstIndex = filtered_table.index[0]
     
-    # Compute inflation over time
     for index, row in filtered_table.iterrows():
         date = row['DATE']
         rowValue = row[COLUMN_NAME]
         
-        # Calculate average inflation if overTime is True
         if overTime:
             avg = filtered_table.loc[firstIndex:index, COLUMN_NAME].mean()
             inflationOverTime.append(avg)
